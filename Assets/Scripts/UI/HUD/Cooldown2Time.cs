@@ -33,8 +33,9 @@ public class Cooldown2Time : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currForm = player.GetComponent<PlayerTransformManager>().current_form;
-
+		if (player.GetComponent<PlayerNormalForm> () != null) {
+			currForm = player.GetComponent<PlayerTransformManager> ().current_form;
+		}
         if (currForm == player.GetComponent<PlayerTransformManager>().transform_dict[1])
         {
             if (!player.GetComponent<PlayerNormalForm>().getCooling2())

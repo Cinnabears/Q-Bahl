@@ -111,7 +111,7 @@ public class AirEnemyMovement : MonoBehaviour {
                         transform.FindChild("airEnemy2Real").localRotation = Quaternion.Euler(0, -90, 0);
                         transform.LookAt(player.transform.position);
                         Vector3 moveTowardDir = (player.transform.position - transform.position).normalized;
-                        transform.Translate(moveTowardDir * 1.0f);
+                        transform.Translate(moveTowardDir * 3.0f);
                     }
                     if (transform.FindChild("airEnemy1") != null)
                     {

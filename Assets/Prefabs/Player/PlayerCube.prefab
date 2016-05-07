@@ -104,6 +104,7 @@ GameObject:
   - 114: {fileID: 11411284}
   - 114: {fileID: 11414086}
   - 114: {fileID: 11439954}
+  - 95: {fileID: 9549686}
   m_Layer: 0
   m_Name: PlayerCube
   m_TagString: Player
@@ -350,6 +351,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9549686
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11411284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,6 +387,12 @@ MonoBehaviour:
   ability1_time: 0
   ability2_time: 0
   special_ability_time: 0
+  cooldown1: 0
+  isCooling1: 0
+  cooldown2: 0
+  isCooling2: 0
+  cooldown3: 0
+  isCooling3: 0
 --- !u!114 &11414086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -407,6 +431,8 @@ MonoBehaviour:
   ability1_time: 0
   ability2_time: 0
   special_ability_time: 0
+  teleEffect1: {fileID: 0}
+  teleEffect2: {fileID: 0}
 --- !u!114 &11427828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -473,6 +499,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 300
+  isJumping: 0
+  jumpTimeout: 0
+  facingRight: 1
+  playerAnim: {fileID: 0}
 --- !u!114 &11472228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,19 +522,12 @@ MonoBehaviour:
   ability1_time: 0
   ability2_time: 0
   special_ability_time: 0
-  rb: {fileID: 5477564}
-  meleeBox: {fileID: 0}
-  aoeBox: {fileID: 0}
-  aoeParticleEffect: {fileID: 0}
-  dashParticleEffect: {fileID: 0}
   cooldown1: 2
   isCooling1: 0
   cooldown2: 5
   isCooling2: 0
   cooldown3: 2
   isCooling3: 0
-  currentAbilityState: 0
-  dashHitList: []
 --- !u!114 &11487342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,6 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1499fcbe6a5744068b022aa1950a161b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

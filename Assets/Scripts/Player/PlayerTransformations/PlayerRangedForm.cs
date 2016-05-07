@@ -52,7 +52,7 @@ public class PlayerRangedForm : PlayerTransform {
 	void fireGatlingGun () {
 		if (!isCooling1) {
 			Vector3 bulletDir = (playerAim.mouse_pos - transform.position).normalized;
-			laserBulletClone = (GameObject)Instantiate (laserBulletObject, new Vector3 (transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.Euler(0, 0, playerAim.turn_angle));
+			laserBulletClone = (GameObject)Instantiate (laserBulletObject, new Vector3 (transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.Euler(0, 0, playerAim.turn_angle));
 			bulletDir.z = 0f;
 			//bulletDir = bulletDir.normalized;
 			laserBulletClone.GetComponent<Rigidbody> ().velocity = bulletDir * 30f;

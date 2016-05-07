@@ -8,6 +8,7 @@ public class PlayerAiming : MonoBehaviour {
 	Vector3 arm_pos;
 	public float turn_angle;
     public bool looking_right;
+	public float x, y;
 
     void Awake () {
         looking_right = true;
@@ -25,20 +26,34 @@ public class PlayerAiming : MonoBehaviour {
 		mouse_pos.z = 0f;
 		turn_angle = Mathf.Atan2 (mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
 		playerArm.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, turn_angle));
-        if (Mathf.Abs(turn_angle) > 90 && looking_right) {
-            looking_right = false;
-            RotatePlayer ();
-        } else if (Mathf.Abs(turn_angle) < 90 && !looking_right) {
-            looking_right = true;
-            RotatePlayer ();
-        }
+
+
+
+
+
+
+
+		//x = Input.GetAxis ("Xbox360ControllerRightX");
+		//y = Input.GetAxis ("Xbox360ControllerRightY");
+
+		//if (x != 0.0f || y != 0.0f) {
+		//	turn_angle = Mathf.Atan2 (y, x) * Mathf.Rad2Deg;
+		//}
+		arm_pos = Camera.main.WorldToScreenPoint (playerArm.transform.position);
+		playerArm.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, turn_angle));
+//		if (PlayerMovement.facingRight) {
+//			playerArm.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, -turn_angle));
+//		} else {
+//			playerArm.transform.rotation = Quaternion.Euler (new Vector3 (180, 180, turn_angle));
+//		}
+//        if (Mathf.Abs(turn_angle) > 90 && looking_right) {
+//            looking_right = false;
+//            Flip ();
+//        } else if (Mathf.Abs(turn_angle) < 90 && !looking_right) {
+//            looking_right = true;
+//            Flip ();
+//        }
 	}
-    
-    void RotatePlayer () {
-        if (!looking_right) {
-            transform.rotation = Quaternion.Euler (new Vector3 (0, 180, 0));
-        } else {
-            transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 0));
-        }
-    }
+
+
 }

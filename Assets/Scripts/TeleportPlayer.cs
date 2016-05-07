@@ -5,6 +5,7 @@ public class TeleportPlayer : MonoBehaviour {
 
 	public GameObject player, teleportPoint;
 	public Camera myCamera;
+	public Light worldLight;
 	public Vector3 teleportPos, playerPos, cameraPos;
 
 
@@ -19,6 +20,7 @@ public class TeleportPlayer : MonoBehaviour {
 		if (other.CompareTag ("Player")) {
 			other.transform.position = teleportPos;
 			myCamera.transform.position = teleportPos;
+			worldLight.intensity = 0f;
 		}
 
 	}

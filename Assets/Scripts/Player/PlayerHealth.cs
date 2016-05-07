@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour, IDamageable<int>, IKillable {
 
 	public int startingHealth = 100;
-	public int currentHealth;
+	public int currentHealth = 100;
     public int currentLives;
 	bool isDead;
 

@@ -38,7 +38,7 @@ public class MasterHandScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		checkForGround ();
-		currState = BossState.RESET_TO_PLAYER;
+		currState = BossState.NOTHING;
 		player = (GameObject) GameObject.FindGameObjectWithTag ("Player");
 		playerMoveComp = player.GetComponent<PlayerMovement> ();
 		playerMoveDir = playerMoveComp.movementDir;
@@ -319,7 +319,7 @@ public class MasterHandScript : MonoBehaviour {
 		currState = BossState.RESET_TO_PLAYER;
 	}
 
-	void setIdleState () {
+	public void setIdleState () {
 		currState = BossState.IDLE;
 	}
 
@@ -349,6 +349,7 @@ public class MasterHandScript : MonoBehaviour {
 
 	public enum BossState {
 		IDLE,
+		NOTHING,
 		RESET_TO_PLAYER,
 		SMASH_SEARCH,
 		SMASH,
